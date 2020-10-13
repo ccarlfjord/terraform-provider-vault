@@ -92,11 +92,9 @@ func identityEntityCreate(d *schema.ResourceData, meta interface{}) error {
 
 	name := d.Get("name").(string)
 
-	path := identityEntityPath
+	path := identityEntityNamePath(name)
 
-	data := map[string]interface{}{
-		"name": name,
-	}
+	data := map[string]interface{}{}
 
 	identityEntityUpdateFields(d, data)
 
